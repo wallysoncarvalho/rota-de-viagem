@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  api:
+  modules:
     defaults:
       run:
         working-directory: ./
@@ -21,5 +21,9 @@ jobs:
           java-version: 11
       - name: Build with Maven
         run: mvn -q package --file pom.xml -Dmaven.test.skip=true
-      - name: Run tests
-        run: mvn test
+      - name: Core Tests
+        run: mvn -pl core test
+      - name: Persistence Tests
+        run: mvn -pl persistence test
+      - name: Rest Tests
+        run: mvn -pl rest test
