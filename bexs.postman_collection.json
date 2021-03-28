@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "e8a12419-169b-43df-9baf-b7ca2ab35b24",
+		"name": "bexs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get shortest path",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/graph/dijkstra?source=GRU&destination=CDG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"graph",
+						"dijkstra"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "GRU"
+						},
+						{
+							"key": "destination",
+							"value": "CDG"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new connection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\": \"GRU\",\r\n    \"destination\": \"SAS\",\r\n    \"cost\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/graph",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"graph"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
