@@ -24,4 +24,4 @@ ENV GRAPH_PATH=/graph_files/graph.csv
 
 EXPOSE ${SERVER_PORT}
 
-ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher", "-Dgraph.path=${GRAPH_PATH}"]
+ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]

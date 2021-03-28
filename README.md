@@ -34,7 +34,7 @@ In the same container, I also copied the artifact for the CLI application. If th
 executed, we're now able to run the CLI app with the following command:
 
 ```
-docker exec -it challenge-wallyson java -jar cli.jar /home/<graph_file_name>
+docker exec -it challenge-wallyson java -jar cli.jar /graph_files/<graph_file_name>
 ```
 
 Note again the name of the file that should coincide with the file that was copied to the folder `graph_files` before
@@ -127,8 +127,3 @@ Example:
 ```
 <host:port>/api/graph/dijkstra?source=GRU&destination=CDG
 ```
-
-<br>
-<br>
-
-> **WARNING**: In the file of the graph, please leave an empty new line at the end of the file.

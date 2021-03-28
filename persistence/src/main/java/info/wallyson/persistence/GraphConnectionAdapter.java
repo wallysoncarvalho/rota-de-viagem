@@ -24,7 +24,14 @@ public class GraphConnectionAdapter implements GraphConnection {
       if (graphHasConnection(graphIdentifier, connection) || connection.getCost() <= 0)
         return false;
 
-      var newLineBytes = String.format("%s%s", connectionStr, LINE_SEPARATOR).getBytes(StandardCharsets.UTF_8);
+      var newLineBytes =
+          String.format("%s%s", LINE_SEPARATOR, connectionStr).getBytes(StandardCharsets.UTF_8);
+
+      var countLines = Files.lines(Paths.get(graphIdentifier)).count();
+
+      if (countLines == 0) {
+        newLineBytes = connectionStr.getBytes(StandardCharsets.UTF_8);
+      }
 
       Files.write(path, newLineBytes, StandardOpenOption.APPEND);
 
