@@ -13,6 +13,16 @@ docker build --tag wallyson/bexs .
 
 This may take a few minutes because we're creating the artifact the application from the source code.
 
+You could also use the `Makefile` to build the project more easily. Just running `make up` will build the image and create a container, after the container is up, you could run `make cmd` to enter the command line interface. Both commands accepts a parameter named `file` where you can specify the name of the file that is on the `graph_files` folder.
+
+So, for example, you could run the following commands:
+
+```
+make up file=graph.csv
+
+make cmd file=graph.csv
+```
+
 ### Rest
 
 After the process described above is done, simply run the command bellow to start the container of the http server:
